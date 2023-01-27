@@ -11,7 +11,7 @@ body {
 
 header {
   display: grid;
-  gap: 60px;
+  gap: 40px;
 }
 ul {
   text-decoration: none;
@@ -25,8 +25,9 @@ h1 {
 p {
   font-size: 2rem;
 }
-h3 {
+h3, p {
   font-size: 2rem;
+  margin: 0;
 }
 .title {
   margin-top: 60px;
@@ -40,6 +41,7 @@ h3 {
 }
 
 .inicio {
+  display: inline-block;
   padding: 1.5rem 3rem;
   text-decoration: none;
   background: white;
@@ -61,7 +63,10 @@ h3 {
   margin: auto;
 }
 .bicicleta {
-  max-width: 500px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: top left;
+  height: 100%;
 }
 
 .descricao {
@@ -78,7 +83,7 @@ h3 {
   text-decoration: none;
   font-size: 1.3rem;
   color: white;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 .move:hover {
   background-color: #900;
@@ -94,19 +99,15 @@ h3 {
 }
 
 .detalhes2 {
-  max-width: 500px;
   background: white;
   padding: 30px;
 }
 
 .barra {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
   padding: 20px;
-}
-
-.barra h3 {
-  margin: auto;
 }
 
 .barra:nth-child(odd) {
@@ -116,10 +117,41 @@ h3 {
 .barra:hover {
   border-left: 4px solid #ee2211;
 }
+.barra p {
+  grid-column: 2;
+}
 
 .footer {
   display: inline-block;
   background: white;
   text-align: center;
   padding: 30px;
+}
+
+@media (max-width: 1050px) {
+  body, header {
+    gap: 30px;
+  }
+  header a {
+    display: flex;
+  }
+  .responsivo {
+    grid-template-columns: 1fr;
+  }
+  .vantagens{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 4.8rem;
+  }
+  .detalhes2 {
+    place-self: center;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .descricao {
+    text-align: left;
+  }
 }
